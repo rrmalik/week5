@@ -11,6 +11,27 @@ window.addEventListener('DOMContentLoaded', function () {
   //    b. insert <li> with player name and dice total: `<li>______ rolled __</li>
 
   // ⬇️ ⬇️ ⬇️ YOUR CODE GOES HERE ⬇️ ⬇️ ⬇️
+  
+  let rollButton = document.querySelector('#roll-button')
+  rollButton = addEventListener('click', function(event) {
+      console.log(event)
+      event.preventDefault()
+  
+  let die1 = getRandomInt(6)
+  let die2 = getRandomInt(6)
+
+  let diceElement = document.querySelector('.dice')
+  diceElement.innerHTML = `
+      <img src="../images/dice/${die1}.png" class="die w-1/2 md:w-1/6">
+      <img src="../images/dice/${die2}.png" class="die w-1/2 md:w-1/6">
+  `
+
+  let playerNameInput = document.querySelector('#player')
+  
+  let result = document.querySelector('.result')
+    result.insertAdjacentHTML('beforeend', `<li>${playerNameInput} rolled a ${total} '
+
+  })
 
   // ⬆️ ⬆️ ⬆️ YOUR CODE ENDS HERE. DON'T CHANGE ANY OTHER CODE ⬆️ ⬆️ ⬆️
 })
